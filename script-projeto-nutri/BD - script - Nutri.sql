@@ -5,8 +5,8 @@ USE nutri;
 CREATE TABLE usuario (
 	id INT PRIMARY KEY AUTO_INCREMENT,
 	nome VARCHAR(50),
-    sobrenome VARCHAR(50),
-    genero VARCHAR(50),
+    	sobrenome VARCHAR(50),
+    	genero VARCHAR(50),
 		check (genero = 'masculino'
 			or genero = 'feminino'),
 	email VARCHAR(50),
@@ -53,11 +53,6 @@ CREATE TABLE Qtd_ingrediente_receita (
 	qtd_ingrediente FLOAT
 );
 
-SELECT * FROM usuario;
-SELECT * FROM Dados_receita;
-SELECT * FROM Ingredientes;
-SELECT * FROM Qtd_ingrediente_receita;
-
 INSERT INTO Ingredientes VALUES
 (null, 'Água - TBCA', 'TBCA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
 (null, 'Açúcar - TBCA', 'TBCA', 395, 98.3, 98.3, 100.0, 0.35, 0.02, 0.00, 0.00, 0.00, 12.5),
@@ -73,40 +68,4 @@ INSERT INTO Ingredientes VALUES
 (null, 'Óleo vegetal de soja - TBCA', 'TBCA', 900, 0, 0, 0, 0, 100.0, 15.2, 0.50, 0, 0),
 (null, 'Ovos - TBCA', 'TBCA', 135, 2.13, 2.13, 0, 11.3, 9.05, 2.64, 0.02, 0.00, 160),
 (null, 'Polvilho doce - TBCA', 'TBCA', 349, 86.8, 86.6, 0.0, 0.43, 0.0, 0.0, 0.0, 0.24, 1.58),
-(null, 'Sal - TBCA', 'TBCA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 1398);
-
-SELECT * FROM usuario;
-
-SELECT
-	nome_receita,
-	porcao_tamanho,
-    porcao_unidade,
-    medida_tamanho,
-    medida_unidade,
-    qtd_ingrediente,
-    valor_energetico_kcal,
-    carboidratos_totais_g,
-    acucares_totais_g,
-	acucares_adicionados_g,
-	proteinas_g,
-	gorduras_totais_g,
-	gorduras_saturadas_g,
-	gorduras_trans_g,
-	fibra_alimentar_g,
-	sodio_mg
-FROM Dados_receita
-	JOIN qtd_ingrediente_receita
-		ON fkDados_receita = idDados_receita
-	JOIN ingredientes
-		ON fkIngrediente = idIngrediente
-WHERE fkUsuario = 1 AND idDados_receita = 1;
-
-SELECT
-	idDados_receita,
-    fkUsuario,
-    nome_receita
-FROM Dados_receita
-WHERE fkUsuario = 1;
-
-    
-    
+(null, 'Sal - TBCA', 'TBCA', 0, 0, 0, 0, 0, 0, 0, 0, 0, 1398);    
