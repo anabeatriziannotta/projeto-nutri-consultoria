@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de medidas</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="100px"></a></h1>
+            <ul class="navbar">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#sobre-nos">Sobre o projeto</a></li>
+                <li><a href="conversor.html">Conversor de medidas</a></li>
+                <li>|</li>
+                <div>
+                    <li><a href="login.html">Entrar</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-conversor">
+        <h2>Conversor de Medidas Culinárias</h2>
+        <div class="conversor">
+            <div>
+                <div>
+                    <span>Ingrediente: </span>
+                    <select id="sel_ingrediente" class="ipt-ingrediente">
+                        <option value="">- Selecione um ingrediente -</option>
+                        <option value="acucar">Açúcar</option>
+                        <option value="amido">Amido de milho</option>
+                        <option value="fermento">Fermento químico</option>
+                        <option value="farinha">Farinha de trigo</option>
+                        <option value="liquidos">Líquidos (água, leite, bebidas, iogurtes, óleos e etc)</option>
+                        <option value="gorduras">Manteiga, banha ou gordura vegetal</option>
+                        <option value="ovo">Ovo</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>Medida 1: </span>
+                    <select id="sel_medida1">
+                        <option value="">- Escolher uma opção -</option>
+                        <option value="colher de chá">Colher de chá</option>
+                        <option value="colher de sobremesa">Colher de sobremesa</option>
+                        <option value="colher de sopa">Colher de sopa</option>
+                        <option value="copo americano">Copo americano</option>
+                        <option value="unidade">Unidade</option>
+                        <option value="xícara de chá">Xícara de chá</option>
+                    </select>
+                </div>
+                <div>
+                    <span>Medida 2:</span>
+                    <select id="sel_medida2">
+                        <option value="">- Escolher uma opção -</option>
+                        <option value="gramas">Gramas</option>
+                        <option value="quilogramas">Quilogramas</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <span>De:</span>
+                    <input onkeyup="converter()" id="ipt_qtd1" type="number">
+                </div>
+                <div>
+                    <span>Para:</span>
+                    <input id="ipt_qtd2" type="number">
+                </div>
+            </div>  
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+
+    function converter() {
+
+
+        /*ACUCAR*/
+        if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 4}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 8}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 12}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 148}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 180}`;
+        }
+
+        if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 4)/1000}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 8)/1000}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 12)/1000}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 148)/1000}`;
+        } else if (sel_ingrediente.value == 'acucar' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 180)/1000}`;
+        }
+
+
+        /*AMIDO*/
+        if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 3}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 6}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 8}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 105}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 128}`;
+        }
+
+        if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 3)/1000}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 6)/1000}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 8)/1000}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 105)/1000}`;
+        } else if (sel_ingrediente.value == 'amido' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 128)/1000}`;
+        }
+        
+        /*FERMENTO*/
+        if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 5}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 10}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 14}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 184}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 224}`;
+        }
+
+        if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 5)/1000}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 10)/1000}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 14)/1000}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 184)/1000}`;
+        } else if (sel_ingrediente.value == 'fermento' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 224)/1000}`;
+        }
+
+        /*FARINHA*/
+        if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 2.5}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 5}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 7.5}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 98.5}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 120}`;
+        }
+
+        if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 2.5)/1000}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 5)/1000}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 7.5)/1000}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 98.5)/1000}`;
+        } else if (sel_ingrediente.value == 'farinha' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 120)/1000}`;
+        }
+
+        /*LIQUIDOS*/
+        if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 5}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 10}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 15}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 190}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 240}`;
+        }
+
+        if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 5)/1000}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 10)/1000}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 15)/1000}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 190)/1000}`;
+        } else if (sel_ingrediente.value == 'liquidos' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 240)/1000}`;
+        }
+
+        /*GORDURAS*/
+        if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 4.2}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 8.4}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 12.5}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 165}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 200}`;
+        }
+
+        if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 4.2)/1000}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de sobremesa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 8.4)/1000}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'colher de sopa' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 12.5)/1000}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'copo americano' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 165)/1000}`;
+        } else if (sel_ingrediente.value == 'gorduras' && sel_medida1.value == 'xícara de chá' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 200)/1000}`;
+        }
+
+        /*OVO*/
+        if (sel_ingrediente.value == 'ovo' && sel_medida1.value == 'unidade' && sel_medida2.value == 'gramas') {
+            ipt_qtd2.value = `${ipt_qtd1.value * 65}`;
+        } else if (sel_ingrediente.value == 'ovo' && sel_medida1.value == 'unidade' && sel_medida2.value == 'quilogramas') {
+            ipt_qtd2.value = `${(ipt_qtd1.value * 65)/1000}`;
+        }
+    }
+</script>

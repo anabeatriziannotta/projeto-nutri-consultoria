@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Referências</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-dash.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="50px"></a></h1>
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="minhas_receitas.html">Minhas receitas</a></li>
+                <li><a href="referencias.html">Referências</a></li>
+                <li><a href="">|</a></li>
+                <div>
+                    <li onclick="sair()">Sair</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+
+    <div class="banner-referencias">
+        <h2>Referências</h2>
+            <div>
+                <h3><a href="https://www.in.gov.br/en/web/dou/-/resolucao-de-diretoria-colegiada-rdc-n-429-de-8-de-outubro-de-2020-282070599"><u>RESOLUÇÃO DE DIRETORIA COLEGIADA - RDC Nº 429, DE 8 DE OUTUBRO DE 2020</u></a></h3>
+                <p>Dispõe sobre a rotulagem nutricional dos alimentos embalados.</p>
+            </div>
+            <div>
+                <h3><a href="https://www.in.gov.br/en/web/dou/-/instrucao-normativa-in-n-75-de-8-de-outubro-de-2020-282071143"><u>INSTRUÇÃO NORMATIVA-IN Nº 75, DE 8 DE OUTUBRO DE 2020</u></a></h3>
+                <p>Estabelece os requisitos técnicos para declaração da rotulagem nutricional nos alimentos embalados.</p>
+            </div>
+            <div>
+                <h3><a href="https://www.gov.br/anvisa/pt-br/assuntos/regulamentacao/legislacao/bibliotecas-tematicas/arquivos/biblioteca-de-alimentos"><u>BIBLIOTECA DE ALIMENTOS</u></a></h3>
+                <p>As Bibliotecas são documentos que reúnem todas as normas vigentes de determinado 
+                    macrotema, divididos por temas. O objetivo é facilitar o acesso e a compreensão do Estoque 
+                    Regulatório ao público interno e externo, bem como aprimorar o processo de elaboração e 
+                    revisão das normativas.
+                </p>
+            </div>
+            <div>
+                <h3><a href="http://www.tbca.net.br/"><u>TBCA - Tabela Brasileira de Composição de Alimentos</u></a></h3>
+                <p>A partir de 2013 a Tabela Brasileira de Composição de Alimentos (TBCA) está sendo desenvolvida de forma integrada entre a Rede Brasileira de Dados de Composição de Alimentos (Brasilfoods), Universidade de São Paulo (USP) e Food Research Center (FoRC/CEPID/FAPESP).</p>
+                <p>A TBCA apresenta duas bases de dados distintas, uma com dados analíticos originais relativos a alimentos da biodiversidade brasileira e alimentos regionais e, outra com informações sobre o conteúdo de componentes dos alimentos mais consumidos no Brasil, com o objetivo de permitir a avaliação da ingestão de nutrientes e facilitar o planejamento de planos alimentares.</p>
+            </div>
+      
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+</body>
+</html>
+<script>
+
+if (sessionStorage.getItem("NOME_USUARIO") != '') {
+        span_perfil.innerHTML += sessionStorage.getItem("NOME_USUARIO");
+    } else {
+        window.location = "./login.html"; 
+    }
+
+    function sair() {
+        window.location = "./login.html";
+
+        sessionStorage.EMAIL_USUARIO = '';
+        sessionStorage.NOME_USUARIO = '';
+        sessionStorage.ID_USUARIO = '';
+    }
+    
+</script>

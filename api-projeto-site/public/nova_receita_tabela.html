@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Receita - Tabela</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-dash.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="50px"></a></h1>
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="minhas_receitas.html">Minhas receitas</a></li>
+                <li><a href="referencias.html">Referências</a></li>
+                <li><a href="">|</a></li>
+                <div>
+                    <li onclick="sair()">Sair</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-nova">
+        <h2 id="h2_nome_receita"></h2>
+        <div class="container-nova">
+            <div class="tabela">
+                <h3>Tabela Nutricional</h3>
+                <div>
+                    <h4>INFORMAÇÃO NUTRICIONAL</h4>
+                    <p>Porções por embalagem: <span id="span_porcao_total">0</span> porções</p>
+                    <p>Porção:  <span id="span_porcao_tamanho">0</span>
+                                <span id="span_porcao_unidade">0</span>
+                                (<span id="span_medida_tamanho">0</span>
+                                <span id="span_medida_unidade">0</span>)</p>
+                </div>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>100 g</th>
+                        <th><span id="span_porcao">0</span> g</th>
+                        <th>%VD*</th>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Valor energético (kcal)</span></td>
+                        <td><span id="span_ve">0</span></td>
+                        <td><span id="span_ve_porcao">0</span></td>
+                        <td><span id="span_ve_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Carboidratos totais (g)</span></td>
+                        <td><span id="span_ct">0</span></td>
+                        <td><span id="span_ct_porcao">0</span></td>
+                        <td><span id="span_ct_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Açúcares totais (g)</span></td>
+                        <td><span id="span_at">0</span></td>
+                        <td><span id="span_at_porcao">0</span></td>
+                        <td><span id="span_at_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Açúcares adicionados (g)</span></td>
+                        <td><span id="span_aa">0</span></td>
+                        <td><span id="span_aa_porcao">0</span></td>
+                        <td><span id="span_aa_vdr">0</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Proteínas (g)</span></td>
+                        <td><span id="span_pt">0</span></td>
+                        <td><span id="span_pt_porcao">0</span></td>
+                        <td><span id="span_pt_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Gorduras totais (g)</span></td>
+                        <td><span id="span_gtot">0</span></td>
+                        <td><span id="span_gtot_porcao">0</span></td>
+                        <td><span id="span_gtot_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Gorduras saturadas (g)</span></td>
+                        <td><span id="span_gsat">0</span></td>
+                        <td><span id="span_gsat_porcao">0</span></td>
+                        <td><span id="span_gsat_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Gorduras trans (g)</span></td>
+                        <td><span id="span_gtrans">0</span></td>
+                        <td><span id="span_gtrans_porcao">0</span></td>
+                        <td><span id="span_gtrans_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Fibras alimentares (g)</span></td>
+                        <td><span id="span_fa">0</span></td>
+                        <td><span id="span_fa_porcao">0</span></td>
+                        <td><span id="span_fa_vdr">0</span></td>
+                    </tr>
+                    <tr>
+                        <td><span class="nutriente">Sódio (mg)</span></td>
+                        <td><span id="span_sd">0</span></td>
+                        <td><span id="span_sd_porcao">0</span></td>
+                        <td><span id="span_sd_vdr">0</span></td>
+                    </tr>
+                </table>
+                <div class="vdr">
+                    <span>*Percentual de valores diários fornecidos pela porção.</span>
+                </div>
+            </div>
+            <div class="analytics">
+                <h3>Gráfico Comparativo - Valor energético (kcal)</h3>
+                <div class="graph">
+                    <canvas id="chartPie" style="width: 300px; height: 300px;"></canvas>
+                </div>
+            </div>
+        </div>
+        <button onclick="finalizar()">Finalizar receita</button>
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+
+var idDadosReceita = window.location.hash.slice(1);
+var fkUsuario = sessionStorage.getItem("ID_USUARIO");
+var soma_qtd_ingredientes = 0;
+var soma_carboidratos_totais_g = 0;
+var soma_acucares_totais_g = 0;
+var soma_acucares_adicionados_g = 0;
+var soma_proteinas_g = 0;
+var soma_gorduras_totais_g = 0;
+var soma_gorduras_saturadas_g = 0;
+var soma_gorduras_trans_g = 0;
+var soma_fibra_alimentar_g = 0;
+var soma_sodio_mg = 0;
+var calculo_valor_energetico_kcal = 0;
+var porcao_tamanho = 0;
+var porcao_unidade = 0;
+var medida_tamanho = 0;
+var medida_unidade = 0;
+var nome_receita = '';
+
+if (idDadosReceita == undefined) {
+
+    window.location = "./dashboard.html";
+} else {
+
+    fetch(`http://localhost:3333/receitas/pegarDadosReceita/${fkUsuario}/${idDadosReceita}`, {
+        method: "GET",
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO pegarDadosReceita!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+
+            resposta.json().then(vt_tabela => {
+                console.log(vt_tabela);
+                console.log(JSON.stringify(vt_tabela));
+                
+                for (let index = 0; index < vt_tabela.length; index++) {
+                    const ingrediente = vt_tabela[index];
+                    nome_receita = ingrediente.nome_receita;
+                    soma_qtd_ingredientes += ingrediente.qtd_ingrediente;
+                    porcao_tamanho = ingrediente.porcao_tamanho;
+                    porcao_unidade = ingrediente.porcao_unidade;
+                    medida_tamanho = ingrediente.medida_tamanho;
+                    medida_unidade = ingrediente.medida_unidade;
+                }
+
+                for (let index = 0; index < vt_tabela.length; index++) {
+                    const ingrediente = vt_tabela[index];
+                    var porcentagem_ingrediente = ingrediente.qtd_ingrediente/soma_qtd_ingredientes;
+                    soma_carboidratos_totais_g += porcentagem_ingrediente * ingrediente.carboidratos_totais_g;
+                    soma_acucares_totais_g += porcentagem_ingrediente * ingrediente.acucares_totais_g;
+                    soma_acucares_adicionados_g += porcentagem_ingrediente * ingrediente.acucares_adicionados_g;
+                    soma_proteinas_g += porcentagem_ingrediente * ingrediente.proteinas_g;
+                    soma_gorduras_totais_g += porcentagem_ingrediente * ingrediente.gorduras_totais_g;
+                    soma_gorduras_saturadas_g += porcentagem_ingrediente * ingrediente.gorduras_saturadas_g;
+                    soma_gorduras_trans_g += porcentagem_ingrediente * ingrediente.gorduras_trans_g;
+                    soma_fibra_alimentar_g += porcentagem_ingrediente * ingrediente.fibra_alimentar_g;
+                    soma_sodio_mg += porcentagem_ingrediente * ingrediente.sodio_mg;
+                    calculo_valor_energetico_kcal = (4 * soma_carboidratos_totais_g) + (4 * soma_proteinas_g) + (9 * soma_gorduras_totais_g) + (2 * soma_fibra_alimentar_g);
+                }
+
+                span_porcao_total.innerHTML = (soma_qtd_ingredientes/porcao_tamanho).toFixed(0);
+                span_porcao_tamanho.innerHTML = porcao_tamanho;
+                span_porcao_unidade.innerHTML = porcao_unidade;
+                span_medida_tamanho.innerHTML = medida_tamanho;
+                span_medida_unidade.innerHTML = medida_unidade;
+                span_porcao.innerHTML = porcao_tamanho;
+                h2_nome_receita.innerHTML = nome_receita;
+
+                span_ve.innerHTML = validarArredondamento(calculo_valor_energetico_kcal);
+                span_ve_porcao.innerHTML = validarArredondamento(((calculo_valor_energetico_kcal * porcao_tamanho)/100));
+                span_ve_vdr.innerHTML = ((((calculo_valor_energetico_kcal * porcao_tamanho)/100) * 100) / 2000).toFixed(0);
+                
+                span_ct.innerHTML = validarArredondamento(soma_carboidratos_totais_g);
+                span_ct_porcao.innerHTML = validarArredondamento(((soma_carboidratos_totais_g * porcao_tamanho)/100));
+                span_ct_vdr.innerHTML = ((((soma_carboidratos_totais_g * porcao_tamanho)/100) * 100) / 300).toFixed(0);
+                
+                span_at.innerHTML = validarArredondamento(soma_acucares_totais_g);
+                span_at_porcao.innerHTML = validarArredondamento(((soma_acucares_totais_g * porcao_tamanho)/100));
+                span_at_vdr.innerHTML = '**';
+                
+                span_aa.innerHTML = validarArredondamento(soma_acucares_adicionados_g);
+                span_aa_porcao.innerHTML = validarArredondamento(((soma_acucares_adicionados_g * porcao_tamanho)/100));
+                span_aa_vdr.innerHTML = ((((soma_acucares_adicionados_g * porcao_tamanho)/100) * 100) / 50).toFixed(0);
+                
+                span_pt.innerHTML = validarArredondamento(soma_proteinas_g);
+                span_pt_porcao.innerHTML = validarArredondamento(((soma_proteinas_g * porcao_tamanho)/100));
+                span_pt_vdr.innerHTML = ((((soma_proteinas_g * porcao_tamanho)/100) * 100) / 50).toFixed(0);
+                
+                span_gtot.innerHTML = validarArredondamento(soma_gorduras_totais_g);
+                span_gtot_porcao.innerHTML = validarArredondamento(((soma_gorduras_totais_g * porcao_tamanho)/100));
+                span_gtot_vdr.innerHTML = ((((soma_gorduras_totais_g * porcao_tamanho)/100) * 100) / 65).toFixed(0);
+                
+                span_gsat.innerHTML = validarArredondamento(soma_gorduras_saturadas_g);
+                span_gsat_porcao.innerHTML = validarArredondamento(((soma_gorduras_saturadas_g * porcao_tamanho)/100));
+                span_gsat_vdr.innerHTML = ((((soma_gorduras_saturadas_g * porcao_tamanho)/100) * 100) / 20).toFixed(0);
+                
+                span_gtrans.innerHTML = validarArredondamento(soma_gorduras_trans_g);
+                span_gtrans_porcao.innerHTML = validarArredondamento(((soma_gorduras_trans_g * porcao_tamanho)/100));
+                span_gtrans_vdr.innerHTML = ((((soma_gorduras_trans_g * porcao_tamanho)/100) * 100) / 2).toFixed(0);
+                
+                span_fa.innerHTML = validarArredondamento(soma_fibra_alimentar_g);
+                span_fa_porcao.innerHTML = validarArredondamento(((soma_fibra_alimentar_g * porcao_tamanho)/100));
+                span_fa_vdr.innerHTML = ((((soma_fibra_alimentar_g * porcao_tamanho)/100) * 100) / 25).toFixed(0);
+                
+                span_sd.innerHTML = validarArredondamento(soma_sodio_mg);
+                span_sd_porcao.innerHTML = validarArredondamento(((soma_sodio_mg * porcao_tamanho)/100));
+                span_sd_vdr.innerHTML = ((((soma_sodio_mg * porcao_tamanho)/100) * 100) / 2000).toFixed(0);
+
+                gerarGrafico();
+
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar realizar o login!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+                alert (texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+
+    })
+}
+
+function validarArredondamento(campo) {
+    
+    if (campo >= 10) {
+        return campo.toFixed(0);
+
+    } else if (campo >=0.6 && campo < 10) {
+        return campo.toFixed(1);
+
+    } else if (campo < 0.6) {
+        return campo.toFixed(0);
+
+    }
+}
+
+function gerarGrafico() {
+    
+    var ctx = document.getElementById('chartPie').getContext('2d');
+
+    var vdrPorcao = ((((calculo_valor_energetico_kcal * porcao_tamanho)/100) * 100)/2000);
+
+    var ax_chartPie = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels:  ['2000 kcal/diário', `${((calculo_valor_energetico_kcal * porcao_tamanho)/100).toFixed(0)} kcal/porção`],
+            datasets: [{
+                label: 'VDR%',
+                data: [(100 - vdrPorcao), vdrPorcao],
+                backgroundColor: [
+                    'rgb(190, 47, 218)',
+                    'rgb(255, 153, 0)'
+                ],
+                borderColor: [
+                    'rgb(190, 47, 218)',
+                    'rgb(255, 153, 0)'   
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                }
+            }
+        }
+    });
+}
+
+    function finalizar() {
+        
+        window.location = './dashboard.html';
+    }
+
+    if (sessionStorage.getItem("NOME_USUARIO") != '') {
+        span_perfil.innerHTML += sessionStorage.getItem("NOME_USUARIO");
+    } else {
+        window.location = "./login.html"; 
+    }
+
+    function sair() {
+        window.location = "./login.html";
+
+        sessionStorage.EMAIL_USUARIO = '';
+        sessionStorage.NOME_USUARIO = '';
+        sessionStorage.ID_USUARIO = '';
+    }
+
+</script>

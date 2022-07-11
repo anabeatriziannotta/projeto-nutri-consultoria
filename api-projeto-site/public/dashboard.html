@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-dash.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="50px"></a></h1>
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="minhas_receitas.html">Minhas receitas</a></li>
+                <li><a href="referencias.html">Referências</a></li>
+                <li><a href="">|</a></li>
+                <div>
+                    <li onclick="sair()">Sair</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner">
+        <div class="perfil">
+            <span id="span_perfil">Olá, </span>
+        </div>
+        <div class="container">
+            <div>
+                <button class="nova_receita" onclick="nova()">Nova Receita</button>
+            </div>
+            <div>
+                <button class="minhas_receitas" onclick="outras()">Minhas Receitas</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+     
+    function nova() {
+        window.location = "./nova_receita_dados.html";     
+    }
+
+    function outras() {
+        window.location = "./minhas_receitas.html";
+    }
+
+    if (sessionStorage.getItem("NOME_USUARIO") != '') {
+        span_perfil.innerHTML += sessionStorage.getItem("NOME_USUARIO");
+    } else {
+        window.location = "./login.html"; 
+    }
+
+    function sair() {
+        window.location = "./login.html";
+
+        sessionStorage.EMAIL_USUARIO = '';
+        sessionStorage.NOME_USUARIO = '';
+        sessionStorage.ID_USUARIO = '';
+    }
+    
+</script>

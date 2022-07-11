@@ -1,0 +1,600 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+/*CABEÇALHO*/
+
+.header {
+    margin-top: 20px;
+    height: 100px; 
+    margin-bottom: 20px;   
+}
+
+.container {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+}
+
+.header .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: center;
+}
+
+.navbar li {
+    font-weight: lighter;
+    color: rgb(255, 0, 119);
+}
+
+.navbar div li{
+    font-weight: lighter;
+    background-color: rgb(255, 0, 119);
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+.navbar .active {
+    font-weight: bolder;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: rgb(255, 0, 119);
+}
+
+.navbar div li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover {
+    font-weight: lighter;
+    color: rgb(190, 47, 218);
+}
+
+.navbar div li:hover{
+    color: rgb(190, 47, 218);
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+/*DASHBOARD*/
+
+.banner {
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+    padding-top: 20px;
+}
+
+.banner span {
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+    font-size: 30px;
+    font-weight: bolder;
+    padding: 25px;
+    margin-bottom: 10px;
+    margin-top: 50px
+}
+
+.banner .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+.banner .container .nova_receita {
+    background-color: rgb(255, 153, 0);
+    color: white;
+    border: none;
+    width: 400px;
+    height: 200px;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.banner .container .nova_receita:hover {
+    box-shadow: gray 5px 5px 5px 5px;
+}
+
+.banner .container .minhas_receitas {
+    background-color: rgb(190, 47, 218);
+    color: white;
+    border: none;
+    width: 400px;
+    height: 200px;
+    font-size: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.banner .container .minhas_receitas:hover {
+    box-shadow: gray 5px 5px 5px 5px;
+}
+
+/*RODAPÉ*/
+
+.footer {
+    background-color: rgb(167, 167, 167);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.footer p {
+    color: white;
+    font-weight: bolder;
+}
+
+/*NOVA RECEITA*/
+
+.banner-nova {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.banner-nova h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 3px 3px 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.banner-nova .container-nova {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.banner-nova .dados {
+    background-color: white;
+    border-radius: 10px;
+    height: 450px;
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: justify;
+}
+
+.banner-nova .dados div{
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: justify;
+    width: 100%;
+}
+
+.banner-nova .dados h3 {
+    color: rgb(255, 153, 0);
+    font-weight: bolder;
+    font-size: 25px;
+    text-shadow: gray 1px 1px 1px;
+    margin-bottom: 10px;
+}
+
+.banner-nova .dados span {
+    color: gray;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.banner-nova .dados input {
+    border: 2px gray solid;
+    width: 95%;
+    height: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.banner-nova .dados select {
+    border: 2px gray solid;
+    width: 99%;
+    height: 40px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.banner-nova .dados div input{
+    width: 55%;
+}
+
+.banner-nova .dados div select{
+    width: 40%;
+}
+
+.banner-nova .ingredientes {
+    background-color: white;
+    border-radius: 10px;
+    height: 650px;
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-evenly;
+}
+
+.banner-nova .ingredientes div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.banner-nova .ingredientes h3 {
+    color: rgb(255, 153, 0);
+    font-weight: bolder;
+    font-size: 25px;
+    text-shadow: gray 1px 1px 1px;
+    margin-bottom: 10px;
+}
+
+.banner-nova .ingredientes div div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.banner-nova .ingredientes span {
+    color: gray;
+    font-weight: bolder;
+    font-size: 15px;
+}
+
+.banner-nova .ingredientes input {
+    border: 2px gray solid;
+    width: 150px;
+    height: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.banner-nova .ingredientes select {
+    border: 2px gray solid;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 16px;
+}
+
+.banner-nova .ingredientes .ipt-qtd {
+    width: 100%;
+    margin-left: 10px;
+}
+
+.banner-nova .ingredientes .sel-ing {
+    width: 100%;
+    margin-right: 10px;
+}
+
+.banner-nova button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: center;
+    margin: 20px;
+}
+
+.banner-nova button:hover {
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+/* TABELA NUTRICIONAL*/
+
+.banner-nova {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.banner-nova h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 3px 3px 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.banner-nova .container-nova {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.banner-nova .tabela {
+    background-color: white;
+    border-radius: 10px;
+    height: 350px;
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-nova .tabela h3 {
+    color: rgb(255, 153, 0);
+    font-weight: bolder;
+    font-size: 25px;
+    text-shadow: gray 1px 1px 1px;
+    margin-bottom: 20px;
+}
+
+.banner-nova .analytics {
+    background-color: white;
+    border-radius: 10px;
+    height: 350px;
+    width: 50%;
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-nova .analytics h3 {
+    color: rgb(255, 153, 0);
+    font-weight: bolder;
+    font-size: 25px;
+    text-shadow: gray 1px 1px 1px;
+    margin-bottom: 10px;
+}
+
+.banner-nova .analytics .graph {
+    width: 80%;
+}
+
+.banner-nova .tabela div h4 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 16pt;
+    text-align: center;
+    color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 400px
+}
+    
+.banner-nova .tabela div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: center;
+    color: black;
+    border-right: black 1px solid;
+    border-left: black 1px solid;
+    width: 400px
+}
+
+.banner-nova .tabela div p span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: center;
+    color: black;
+}
+
+.banner-nova .tabela .vdr span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 10pt;
+    text-align: left;
+    color: black;
+}
+
+table {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 402px
+}
+
+tr td{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: left;
+    color: black;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr th {
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    text-align: center;
+    color: black; 
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+tr th span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 12pt;
+    text-align: center;
+    color: black; 
+}
+
+tr td span{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: center;
+    color: black;
+    display: block;
+}
+
+tr td .nutriente{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12pt;
+    text-align: left;
+    color: black;
+}
+
+/*MINHAS RECEITAS*/
+
+
+.banner-minhas {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.banner-minhas div {
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    width: 92%;
+    margin: 20px;
+    padding: 20px;
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+.banner-minhas button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 95%;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+.banner-minhas button:hover {
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+.banner-minhas .bt_receitas {
+    color: rgb(190, 47, 218);
+    background-color: white;
+    border: none;
+    border-radius: 0;
+    width: auto;
+    height: 25px;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px;
+    margin: 10px;
+}
+
+.banner-minhas .bt_receitas:hover {
+    color: rgb(255, 0, 119);
+    box-shadow: none;
+    cursor: pointer;
+}
+
+/*REFERENCIAS*/
+
+.banner-referencias {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(240, 240, 240);
+}
+
+.banner-referencias div {
+    background-color: white;
+    border-radius: 10px;
+    height: auto;
+    width: 90%;
+    margin: 20px;
+    padding: 20px;
+}
+
+.banner-referencias u {
+    color: rgb(190, 47, 218);
+    background-color: white;
+    width: auto;
+    height: 25px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.banner-referencias u:hover  {
+    color: rgb(255, 0, 119);
+    cursor: pointer;
+}
+
+.banner-referencias h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 3px 3px 3px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}

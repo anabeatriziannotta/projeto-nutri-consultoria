@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./assets/js/funcoes.js"></script>
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="100px"></a></h1>
+            <ul class="navbar">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#sobre-nos">Sobre o projeto</a></li>
+                <li><a href="conversor.html">Conversor de medidas</a></li>
+                <li>|</li>
+                <div>
+                    <li><a href="login.html">Entrar</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-cad-log">
+        <div class="form-login-img">
+            <img src="./img/typewriter-801921_1280.jpg" height="500px">
+        </div>
+        <div class="align">
+            <form id="form_login" method="post" onsubmit="return entrar()">
+                <div class="form-login">
+                    <h2>
+                        Já possui cadastro?!
+                        <br>
+                        Faça seu login!
+                    </h2>
+                    <br><br>
+                    <div>
+                        <span>E-mail: </span>
+                        <input name="email" type="email" placeholder="Insira seu e-mail">
+                    </div>
+                    <div>
+                        <span>Senha:</span>
+                        <input name="senha" type="password" placeholder="********">
+                    </div>
+                    <br><br>
+                    <button onclick="entrar()">Entrar</button>
+                    <br>
+                    <span>ou</span>
+                    <br>
+                </div>
+            </form>
+            <button onclick="cadastrar()">Cadastre-se</button>
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_login").reset();
+    }
+
+    function entrar() {
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_login")));
+
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+
+        console.log("FORM LOGIN: ", email);
+        console.log("FORM SENHA: ", senha);
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (email == "" || senha == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+            return false;
+        }
+
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            return false;
+        }
+
+        fetch("http://localhost:3333/usuarios/autenticar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+                    sessionStorage.EMAIL_USUARIO = json.email;
+                    sessionStorage.NOME_USUARIO = json.nome;
+                    sessionStorage.ID_USUARIO = json.id;
+
+                    window.location = "./dashboard.html";
+                   
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    alert (texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+
+        })
+
+        return false;
+    }
+
+    function cadastrar() {
+        window.location = "./cadastro.html";
+    }
+
+</script>

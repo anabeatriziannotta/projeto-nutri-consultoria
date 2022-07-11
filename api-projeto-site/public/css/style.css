@@ -1,0 +1,592 @@
+* {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: gray;
+    margin: 0;
+    padding: 0;
+}
+
+/*CABEÇALHO*/
+
+.header {
+    margin-top: 20px;
+    height: 250px;    
+}
+
+.container {
+    width: 80%;
+    height: 100%;
+    margin: auto;
+}
+
+.header .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.navbar {
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: space-between;
+    font-size: 25px;
+    align-items: center;
+}
+
+.header h1 a {
+    text-decoration: none;
+}
+
+.navbar li {
+    font-weight: lighter;
+    color: rgb(255, 0, 119);
+}
+
+.navbar div li{
+    font-weight: lighter;
+    background-color: rgb(255, 0, 119);
+    color: white;
+    width: 100px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    text-align: center;
+}
+
+.navbar div li:hover{
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+.navbar .active {
+    font-weight: bolder;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: rgb(255, 0, 119);
+}
+
+.navbar div li a{
+    text-decoration: none;
+    color: white;
+}
+
+.navbar li a:hover {
+    font-weight: lighter;
+    color: rgb(190, 47, 218);
+}
+
+/*PÁGINA INICIAL*/
+
+.banner-home {
+    height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-image: url('../img/shopping.jpg');
+    background-size: cover;
+}
+
+.banner-home p {
+    color: white;
+    font-size: 50px;
+    text-shadow: grey 2px 2px 2px;
+    width: 30%;
+    text-align: center;
+}
+
+.banner {
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+
+/*SOBRE NOS*/
+
+.sobre-nos {
+    margin-top: 50px;
+    height: 550px;
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+}
+
+.sobre-nos .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sobre-nos .container .bar {
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    width: 200px;
+    height: 3px;
+}
+
+.sobre-nos .container .autor {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.sobre-nos .container .autor div {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    margin-left: 30px;
+}
+
+.sobre-nos .container h2 {
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+    font-size: 30px;
+    padding: 25px;
+}
+
+.sobre-nos .container img {
+    border: rgb(240, 240, 240) solid 8px;
+}
+
+/*PRODUTOS*/
+
+.produtos {
+    margin-top: 40px;
+    height: 550px;
+    background-color: rgb(240, 240, 240);
+    padding: 20px;
+}
+
+.produtos .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.produtos .container .bar {
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    width: 200px;
+    height: 3px;
+}
+
+.produtos .container .tabela {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.produtos .container .tabela div {
+    width: 35vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
+    font-size: 20px;
+}
+
+.produtos .container .planos {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: center;
+    font-size: 16px;
+    margin-top: 50px;
+}
+
+.produtos .container .planos div {
+    width: 25%;
+    height: 100%;
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    color: white;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: gray 2px 2px 2px 2px;
+}
+
+.produtos .container .planos div:hover {
+    box-shadow: gray 5px 5px 5px 5px;
+    
+}
+
+.produtos .container .planos div h3 {
+    color: white;
+    text-shadow: gray 2px 2px 2px;
+}
+
+.produtos .container .planos div span {
+    color: white;
+    text-shadow: gray 2px 2px 2px;
+    font-weight: bolder;
+    font-size: 25px;
+}
+
+.produtos .container h2 {
+    background-color: rgb(190, 47, 218);
+    background-image: linear-gradient(to right, rgb(255, 0, 119), transparent, rgb(255, 153, 0));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: black;
+    font-size: 30px;
+    padding: 25px;
+}
+
+/*RODAPÉ*/
+
+.footer {
+    background-color: rgb(167, 167, 167);
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.footer p {
+    color: white;
+    font-weight: bolder;
+}
+
+/*LOGIN*/
+
+
+
+.banner-cad-log {
+    height: 500px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    background-color: rgb(255, 153, 0);
+}
+
+.banner-cad-log .form-login-img {
+    height: 100%;
+}
+
+.banner-cad-log .align {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.banner-cad-log .form-login {
+    background-color: rgb(255, 153, 0);
+    height: 350px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.banner-cad-log .form-login div {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.banner-cad-log .form-login h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 2px 2px 2px;
+    text-align: center;
+}
+
+.banner-cad-log .form-login span {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-shadow: gray 2px 2px 2px;
+}
+
+.banner-cad-log .form-login div input {
+    border: 2px gray solid;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.banner-cad-log .form-login button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 315px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.banner-cad-log .form-login button:hover {
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+.banner-cad-log button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 315px;
+    height: 40px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.banner-cad-log button:hover {
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+/*CADASTRO*/
+
+.banner-cad-log .form-cadastro {
+    height: auto;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.banner-cad-log .form-cadastro form .inform {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.banner-cad-log .form-cadastro .inform div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.banner-cad-log .form-cadastro h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 2px 2px 2px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner-cad-log .form-cadastro span {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-shadow: gray 2px 2px 2px;
+}
+
+.banner-cad-log .form-cadastro div input {
+    border: 2px gray solid;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.banner-cad-log .form-cadastro button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 315px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.banner-cad-log .form-cadastro button:hover {
+    box-shadow: gray 2px 2px 2px;
+    cursor: pointer;
+}
+
+.banner-cad-log .form-cadastro .cad-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.banner-cad-log .form-cadastro select {
+    border: 2px gray solid;
+    width: 320px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+/*PAGAMENTO
+
+.banner-cad-log .form-pagamento {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+}
+
+.banner-cad-log .form-pagamento .pag-title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.banner-cad-log .form-pagamento h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 2px 2px 2px;
+    text-align: center;
+}
+
+.banner-cad-log .form-pagamento span {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-shadow: gray 2px 2px 2px;
+}
+
+.banner-cad-log .form-pagamento div input {
+    border: 2px gray solid;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.banner-cad-log .form-pagamento button {
+    background-color: rgb(255, 0, 119);
+    color: white;
+    border: none;
+    width: 315px;
+    height: 50px;
+    font-size: 20px;
+    border-radius: 10px;
+    padding: 8px;
+}
+
+.banner-cad-log .form-pagamento select {
+    border: 2px gray solid;
+    width: 320px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}*/
+
+/*CONVERSOR*/
+
+.banner-conversor {
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    background-color: rgb(255, 153, 0);
+    padding: 10px;
+}
+
+.banner-conversor .conversor {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 50%;
+    height: 300px;
+}
+
+.banner-conversor h2 {
+    color: white;
+    font-weight: bolder;
+    font-size: 30px;
+    text-shadow: gray 2px 2px 2px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner-conversor .conversor div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    height: 80px;
+}
+
+.banner-conversor .conversor div div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.banner-conversor .conversor span {
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    text-shadow: gray 2px 2px 2px;
+}
+
+.banner-conversor .conversor div input {
+    border: 2px gray solid;
+    width: 300px;
+    height: 30px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.banner-conversor .conversor div select {
+    border: 2px gray solid;
+    width: 320px;
+    height: 50px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}
+
+.banner-conversor .conversor .ipt-ingrediente {
+    border: 2px gray solid;
+    width: 98%;
+    height: 50px;
+    border-radius: 10px;
+    padding: 8px;
+    font-size: 20px;
+}

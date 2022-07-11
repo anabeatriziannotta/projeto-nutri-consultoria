@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script src="./assets/js/funcoes.js"></script>
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="100px"></a></h1>
+            <ul class="navbar">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="index.html#produtos">Produtos</a></li>
+                <li><a href="index.html#sobre-nos">Sobre o projeto</a></li>
+                <li><a href="conversor.html">Conversor de medidas</a></li>
+                <li>|</li>
+                <div>
+                    <li><a href="login.html">Entrar</a></li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-cad-log">
+
+        <div id="div_cadastro" class="form-cadastro" style="display: block;">
+            <h2>Faça seu cadastro!</h2>
+            <form  id="form_cadastro" method="post" onsubmit="return cadastrar()">
+            <div class="inform">
+                
+                    <div>
+                        <div>
+                            <span>Nome: </span>
+                            <input name="nome" type="text" placeholder="Insira seu nome">
+                        </div>
+                        <div>
+                            <span>Sobrenome: </span>
+                            <input name="sobrenome" type="text" placeholder="Insira seu sobrenome">
+                        </div>
+                        <div>
+                            <span>Gênero:</span>
+                            <select name="genero">
+                                <option value="">- Escolher uma opção -</option>
+                                <option value="feminino">Feminino</option>
+                                <option value="masculino">Masculino</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <span>E-mail: </span>
+                            <input name="email" type="email" placeholder="Insira seu e-mail">
+                        </div>
+                        <div>
+                            <span>Senha:</span>
+                            <input name="senha" type="password" placeholder="********">
+                        </div>
+                        <div>
+                            <span>Confirmação de senha:</span>
+                            <input name="confirmacaoSenha" type="password" placeholder="********">
+                        </div>
+                    </div>  
+            </div>
+            <div class="cad-button">
+                <button>Finalizar cadastro</button>  
+            </div> 
+        </form>
+
+            <div id="div_erros_login">
+                
+            </div>
+        </div>
+        <!--
+        <form id="form_pagamento" method="post" onsubmit="return pagar()">
+            <div id="div_pagamento" class="form-pagamento" style="display: none;">
+                <div class="pag-title">
+                    <h2>Escolha sua forma de pagamento:</h2>
+                </div>
+                <div>
+                    <span>Planos:</span>
+                    <select name="planos">
+                        <option value="">- Escolher uma opção -</option>
+                        <option value="mensal">Plano mensal - R$ 55,00</option>
+                        <option value="semestral">Plano semestral - R$ 162,00</option>
+                        <option value="anual">Plano anual - R$ 252,00</option>
+                    </select>
+                </div>
+                <br>
+                <div>
+                    <span>Tipo de pagamento:</span>
+                    <select name="tipo_pagamento">
+                        <option value="">- Escolher uma opção -</option>
+                        <option value="boleto">Boleto bancário</option>
+                        <option value="debito">Cartão de débito</option>
+                        <option value="credito">Cartão de crédito</option>
+                    </select>
+                </div>
+                <br>
+                <button onclick="pagar()">Finalizar cadastro</button>
+            </div>
+    
+        </form>
+        -->
+        
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_cadastro").reset();
+    }
+
+    function cadastrar() {
+        
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_cadastro")));
+
+        var nome = formulario.get("nome");
+        var sobrenome = formulario.get("sobrenome");
+        var genero = formulario.get("genero");
+        var email = formulario.get("email");
+        var senha = formulario.get("senha");
+        var confirmacaoSenha = formulario.get("confirmacaoSenha");
+
+        // TODO: VERIFICAR AS VALIDAÇÕES QUE ELES ESTÃO APRENDENDO EM ALGORITMOS 
+        if (nome == "" || sobrenome == "" || genero == "" || email == "" || senha == "" || confirmacaoSenha == "") {
+            
+            window.alert("Preencha todos os campos para prosseguir!");
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (sobrenome == "")  {
+                console.log('sobrenome está em branco')
+            }
+            if (genero == "" )  {
+                console.log('genero está em branco')
+            }
+            if (email == "" )  {
+                console.log('email está em branco')
+            }
+            if (senha == "" )  {
+                console.log('senha está em branco')
+            }
+            if (confirmacaoSenha == "" )  {
+                console.log('confirmacaoSenha está em branco')
+            }
+            
+            return false;
+        }
+
+        if (nome.length < 2) {
+            window.alert("Ops, nome inválido! Verifique e tente novamente.");
+            
+            return false;
+        }
+
+        if (sobrenome.length < 3) {
+            window.alert("Ops, sobrenome inválido! Verifique e tente novamente.");
+           
+            return false;
+        }
+        
+        if (email.indexOf("@") == -1 || email.indexOf(".com") == -1) {
+            window.alert("Ops, e-mail inválido! Verifique e tente novamente.");
+            
+            return false;
+        }
+
+        if (senha.length < 6) {
+            window.alert("Ops, senha inválida! Sua senha precisar ter, no mínimo, 6 caracteres.");
+            
+            return false;
+        }
+        
+        if (senha != confirmacaoSenha) {
+            window.alert("As senhas inseridas devem ser iguais para prosseguir!");
+            
+            return false;
+        }
+
+        fetch("http://localhost:3333/usuarios/cadastrar", {
+            method: "POST",
+            body: formulario
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                window.alert("Cadastro realizado com sucesso!");
+                window.location = "login.html";
+                limparFormulario();
+                
+            } else {
+                throw("Houve um erro ao tentar realizar o cadastro!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            
+        });
+
+        return false;
+    }
+
+</script>

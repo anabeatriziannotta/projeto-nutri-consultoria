@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Receita - Dados</title>
+
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style-dash.css">
+
+</head>
+<body>
+
+    <div class="header">
+        <div class="container">
+            <h1><a href="index.html"><img src="./img/logo.png" height="50px"></a></h1>
+            <ul class="navbar">
+                <li><a href="dashboard.html">Início</a></li>
+                <li><a href="minhas_receitas.html">Minhas receitas</a></li>
+                <li><a href="referencias.html">Referências</a></li>
+                <li><a href="">|</a></li>
+                <div>
+                    <li onclick="sair()">Sair</li>
+                </div>
+            </ul>
+        </div>
+    </div>
+
+    <div class="banner-nova">
+        <h2>Criar uma nova receita</h2>
+        <div class="container-nova">
+            <form class="dados" id="form_dados" method="post">
+                <h3>Dados da receita</h3>
+                <input id="ipt_fkUsuario" name="fkUsuario" type="hidden"/>
+                <span>Nome:</span>
+                <input name="nome" type="text" placeholder="ex. Pão de batata">
+                <span>Categoria:</span>
+                <select name="categoria">
+                    <option value="">- Escolher uma opção -</option>
+                    <option value="grupo1">Grupo I: Produtos de panificação, cereais, leguminosas, raízes, tubérculos e seus derivados</option>
+                    <option value="grupo2">Grupo II: Verduras, hortaliças e conservas vegetais</option>
+                    <option value="grupo3">Grupo III: Frutas, sucos, néctares e refrescos de frutas</option>
+                    <option value="grupo4">Grupo IV: Leites e derivados</option>
+                    <option value="grupo5">Grupo V: Carnes e ovos</option>
+                    <option value="grupo6">Grupo VI: Óleos, gorduras e sementes oleaginosas</option>
+                    <option value="grupo7">Grupo VII: Açúcares e produtos com energia proveniente de carboidratos e gorduras</option>
+                    <option value="grupo8">Grupo VIII: Molhos, temperos prontos, caldos, sopas, pratos semiprontos ou prontos para consumo e bebidas alcoólicas.</option>
+                </select>
+                <span>Tamanho da porção:</span>
+                <div>
+                <input name="porcaoTamanho" type="text" placeholder="ex.40">
+                <select name="porcaoUnidade">
+                    <option value="">- Escolher uma opção -</option>
+                    <option value="g">g</option>
+                    <option value="ml">ml</option>
+                </select>
+                </div>
+                <span>Medida caseira:</span>
+                <div>
+                    <input name="medidaTamanho" type="text" placeholder="ex.20">
+                    <select name="medidaUnidade">
+                        <option value="">- Escolher uma opção -</option>
+                        <option value="colher de chá">Colher de chá</option>
+                        <option value="colheres de chá">Colheres de chá</option>
+                        <option value="colher de sopa">Colher de sopa</option>
+                        <option value="colheres de sopa">Colheres de sopa</option>
+                        <option value="copo">Copo</option>
+                        <option value="copos">Copos</option>
+                        <option value="fatia">Fatia</option>
+                        <option value="fatias">Fatias</option>
+                        <option value="fração">Fração</option>
+                        <option value="frações">Frações</option>
+                        <option value="prato">Prato</option>
+                        <option value="pratos">Pratos</option>
+                        <option value="unidade">Unidade</option>
+                        <option value="unidades">Unidades</option>
+                        <option value="xícara">Xícara</option>
+                        <option value="xícaras">Xícaras</option>
+                    </select>
+                </div>
+            </form>
+            <form class="ingredientes" id="form_ingredientes" method="post">
+                <h3>Adicionar ingredientes na receita</h3>
+                <input id="ipt_fkDados_receita" name="fkDados_receita" type="hidden"/>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente1">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade1" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente2">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade2" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente3">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade3" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente4">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade4" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente5">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade5" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente6">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade6" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente7">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade7" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente8">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade8" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente9">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade9" type="number">
+                    </div>
+                </div>
+                <div>
+                    <div class="sel-ing">
+                        <span>Ingrediente:</span>
+                            <select name="ingrediente10">
+                                <option value="">- Selecione um ingrediente -</option>
+                                <option value="1">Água - TBCA</option>
+                                <option value="2">Açúcar - TBCA</option>
+                                <option value="3">Amido de milho - TBCA</option>
+                                <option value="4">Cacau em pó - TBCA</option>
+                                <option value="5">Cenoura - TBCA</option>
+                                <option value="6">Farinha de trigo - TBCA</option>
+                                <option value="7">Fermento biológico - TBCA</option>
+                                <option value="8">Fermento químico - TBCA</option>
+                                <option value="9">Fubá de milho - TBCA</option>
+                                <option value="10">Gordura vegetal - TBCA</option>                
+                                <option value="11">Leite integral - TBCA</option>
+                                <option value="12">Óleo vegetal de soja - TBCA</option>
+                                <option value="13">Ovos - TBCA</option>
+                                <option value="14">Polvilho doce - TBCA</option>
+                                <option value="15">Sal - TBCA</option>
+                            </select>
+                    </div>
+                    <div class="ipt-qtd">
+                        <span>Quantidade (g ou ml):</span>
+                        <input name="quantidade10" type="number">
+                    </div>
+                </div>
+            </form> 
+        </div>
+        <button onclick="salvar()">Salvar receita</button>
+    </div>
+
+    <div class="footer">
+        <p>
+            Rua Haddock Lobo, 595 - Cerqueira César<br>
+            São Paulo - SP, 01414-001 <br>
+            nutri.consultoria@example.com
+        </p>
+        <p>
+            Feito com amor por um aluno SPTECH © 2021
+        </p>  
+    </div>
+
+</body>
+</html>
+<script>
+
+    function limparFormulario() {
+        document.getElementById("form_dados").reset();
+        document.getElementById("form_ingredientes").reset();
+    }
+
+    function salvar() {
+
+        ipt_fkUsuario.value = sessionStorage.getItem("ID_USUARIO");
+        
+        var formularioDados = new URLSearchParams(new FormData(document.getElementById("form_dados")));
+        var fkUsuario = formularioDados.get("fkUsuario")
+        var nome = formularioDados.get("nome");
+        var categoria = formularioDados.get("categoria");
+        var porcaoTamanho = formularioDados.get("porcaoTamanho");
+        var porcaoUnidade = formularioDados.get("porcaoUnidade");
+        var medidaTamanho = formularioDados.get("medidaTamanho");
+        var medidaUnidade = formularioDados.get("medidaUnidade");
+
+        if (nome == "" || categoria == "" || porcaoTamanho == "" || porcaoUnidade == "" || medidaTamanho == "" || medidaUnidade == "") {
+            window.alert("Preencha todos os campos para prosseguir!");
+
+            if (nome == "")  {
+                console.log('nome está em branco')
+            }
+            if (categoria == "")  {
+                console.log('categoria está em branco')
+            }
+            if (porcaoTamanho == "" )  {
+                console.log('tamanho da porção está em branco')
+            }
+            if (porcaoUnidade == "" )  {
+                console.log('unidade da porção está em branco')
+            }
+            if (medidaTamanho == "" )  {
+                console.log('tamanho da medida caseira está em branco')
+            }
+            if (medidaUnidade == "" )  {
+                console.log('unidade da medida caseira está em branco')
+            }
+            
+            return false;
+        }
+
+        if (nome.length < 2) {
+            window.alert("Ops, nome inválido! Verifique e tente novamente.");
+            
+            return false;
+        }
+
+        var formulario = new URLSearchParams(new FormData(document.getElementById("form_ingredientes")));
+        var ingrediente1 = formulario.get("ingrediente1");
+        var quantidade1 = formulario.get("quantidade1");
+        var ingrediente2 = formulario.get("ingrediente2");
+        var quantidade2 = formulario.get("quantidade2");
+        var ingrediente3 = formulario.get("ingrediente3");
+        var quantidade3 = formulario.get("quantidade3");
+        var ingrediente4 = formulario.get("ingrediente4");
+        var quantidade4 = formulario.get("quantidade4");
+        var ingrediente5 = formulario.get("ingrediente5");
+        var quantidade5 = formulario.get("quantidade5");
+        var ingrediente6 = formulario.get("ingrediente6");
+        var quantidade6 = formulario.get("quantidade6");
+        var ingrediente7 = formulario.get("ingrediente7");
+        var quantidade7 = formulario.get("quantidade7");
+        var ingrediente8 = formulario.get("ingrediente8");
+        var quantidade8 = formulario.get("quantidade8");
+        var ingrediente9 = formulario.get("ingrediente9");
+        var quantidade9 = formulario.get("quantidade9");
+        var ingrediente10 = formulario.get("ingrediente10");
+        var quantidade10 = formulario.get("quantidade10");
+
+        fetch("http://localhost:3333/receitas/salvar", {
+            method: "POST",
+            body: formularioDados
+        }).then(function (resposta) {
+
+            console.log("resposta: ", resposta);
+
+            if (resposta.ok) {
+                resposta.json().then(valores => {
+
+                    ipt_fkDados_receita.value = valores.insertId;
+                    formulario = new URLSearchParams(new FormData(document.getElementById("form_ingredientes")));
+
+                    fetch("http://localhost:3333/receitas/salvarIngredientes", {
+                        method: "POST",
+                        body: formulario
+                    }).then(function (resposta2) {
+
+                        console.log("resposta: ", resposta2);
+
+                        if (resposta2.ok) {
+                            window.alert("Receita salva com sucesso!");
+                            window.location = `./nova_receita_tabela.html#${valores.insertId}`;
+                            limparFormulario();
+  
+                        } else {
+                            throw("Houve um erro ao tentar salvar a receita!");
+                        }
+                    }).catch(function (resposta) {
+                        console.log(`#ERRO: ${resposta}`);    
+                    });
+                });                
+            } else {
+                throw("Houve um erro ao tentar salvar a receita!");
+            }
+        }).catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+            
+        });
+
+        return false;
+
+        
+    }
+
+    if (sessionStorage.getItem("NOME_USUARIO") != '') {
+        span_perfil.innerHTML += sessionStorage.getItem("NOME_USUARIO");
+    } else {
+        window.location = "./login.html"; 
+    }
+
+    function sair() {
+        window.location = "./login.html";
+
+        sessionStorage.EMAIL_USUARIO = '';
+        sessionStorage.NOME_USUARIO = '';
+        sessionStorage.ID_USUARIO = '';
+    }
+
+</script>
